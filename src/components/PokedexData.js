@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PokemonType from "./PokemonType";
-import { padNumer } from "../utils";
+import { capitalize } from "../utils";
 
 function toFeet(n) {
   var realFeet = (n * 0.3937) / 12;
@@ -19,38 +19,50 @@ const formatWeight = weight => {
   return `${lbs} lbs  (${weight / 10}kg)`;
 };
 
-const PokedexData = ({ id, types, height, weight }) => (
-  <table className="table is-hoverable">
-    <tbody>
-      <tr>
-        <td>National №</td>
-        <td>{padNumer(id)}</td>
-      </tr>
-      <tr>
-        <td>Type</td>
-        <td>
-          <div className="tags">
-            {types
-              .sort((a, b) => a.slot - b.slot)
-              .map(type => <PokemonType {...type} key={type.slot} />)}
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>Height</td>
-        <td>{formatHeight(height)}</td>
-      </tr>
-      <tr>
-        <td>Weight</td>
-        <td>{formatWeight(weight)}</td>
-      </tr>
-    </tbody>
-  </table>
+const entry = (label, value) => (
+  <div className="column is-half">
+    <h1
+      className="subtitle is-5 has-text-weight-light"
+      style={{ marginBottom: "0.5rem" }}
+    >
+      {label}
+    </h1>
+    <h2
+      className="subtitle is-5 has-text-weight-normal"
+      style={{ marginTop: "0.5rem" }}
+    >
+      {value}
+    </h2>
+  </div>
+);
+
+const PokedexData = ({ id, types, height, weight, abilities }) => (
+  <div className="columns is-multiline is-mobile">
+    {entry("Height", formatHeight(height))}
+    {entry(
+      "Type",
+      <div className="tags">
+        {types
+          .sort((a, b) => a.slot - b.slot)
+          .map(type => <PokemonType {...type} key={type.slot} />)}
+      </div>
+    )}
+    {entry("Weight", formatWeight(weight))}
+    {entry(
+      "Abilities",
+      abilities
+        .sort((a, b) => a.slot - b.slot)
+        .filter(ab => !ab.is_hidden)
+        .map(a => capitalize(a.ability.name))
+        .join(", ")
+    )}
+  </div>
 );
 
 PokedexData.propTypes = {
   order: PropTypes.number.isRequired,
   types: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  abilities: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   height: PropTypes.number.isRequired,
   weight: PropTypes.number.isRequired
 };

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import api from "../services/api";
+import { deepEqual } from "../utils";
+import Loader from "./Loader";
 
 const withFetching = getUrl => InnerComponent =>
   class WithFetching extends Component {
@@ -15,6 +17,15 @@ const withFetching = getUrl => InnerComponent =>
     }
 
     componentDidMount() {
+      this.fetchData();
+    }
+    componentDidUpdate(prevProps) {
+      if (!deepEqual(this.props, prevProps)) {
+        this.fetchData(this.props.userID);
+      }
+    }
+
+    fetchData() {
       this.setState({ isLoading: true });
 
       api(getUrl(this.props))
@@ -32,7 +43,7 @@ const withFetching = getUrl => InnerComponent =>
       }
 
       if (this.state.isLoading) {
-        return <div className="loader" />;
+        return <Loader />;
       }
       return <InnerComponent {...this.props} {...this.state.data} />;
     }
