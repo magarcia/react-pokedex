@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import api from "../services/api";
-import { deepEqual } from "../utils";
-import Loader from "./Loader";
+import React, {Component} from 'react';
+import {deepEqual} from '../utils';
+import api from '../services/api';
+import Loader from './Loader';
 
 const withFetching = getUrl => InnerComponent =>
   class WithFetching extends Component {
@@ -11,8 +11,8 @@ const withFetching = getUrl => InnerComponent =>
 
       this.state = {
         data: {},
+        error: null,
         isLoading: true,
-        error: null
       };
     }
 
@@ -26,11 +26,11 @@ const withFetching = getUrl => InnerComponent =>
     }
 
     fetchData() {
-      this.setState({ isLoading: true });
+      this.setState({isLoading: true});
 
       api(getUrl(this.props))
-        .then(data => this.setState({ data, isLoading: false }))
-        .catch(error => this.setState({ error, isLoading: false }));
+        .then(data => this.setState({data, isLoading: false}))
+        .catch(error => this.setState({error, isLoading: false}));
     }
 
     render() {

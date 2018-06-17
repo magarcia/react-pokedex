@@ -1,22 +1,22 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-const GenerationSelector = ({ currentGeneration }) => {
-  const isActive = id => (currentGeneration === id && "is-active") || "";
+const GenerationSelector = ({currentGeneration}) => {
+  const isActive = id => (currentGeneration === id && 'is-active') || '';
   return (
     <div className="tabs">
       <ul>
-        <li className={isActive("all")}>
-          <Link to={`/generation/all`}>All</Link>
+        <li className={isActive('all')}>
+          <Link to={'/generation/all'}>All</Link>
         </li>
-        <li className={isActive("1")}>
-          <Link to={`/generation/1`}>First generation</Link>
+        <li className={isActive('1')}>
+          <Link to={'/generation/1'}>First generation</Link>
         </li>
-        <li className={isActive("2")}>
-          <Link to={`/generation/2`}>Second geneneration</Link>
+        <li className={isActive('2')}>
+          <Link to={'/generation/2'}>Second geneneration</Link>
         </li>
-        <li className={isActive("3")}>
-          <Link to={`/generation/3`}>Third generation</Link>
+        <li className={isActive('3')}>
+          <Link to={'/generation/3'}>Third generation</Link>
         </li>
       </ul>
     </div>

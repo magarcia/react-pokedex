@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Pokedex from "./pages/Pokedex";
-import Pokemon from "./pages/Pokemon";
-import About from "./pages/About";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import React, {Fragment} from 'react';
+import {Route, BrowserRouter as Router} from 'react-router-dom';
+import About from './pages/About';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Pokedex from './pages/Pokedex';
+import Pokemon from './pages/Pokemon';
 
 const App = () => (
   <Router>
@@ -12,7 +12,7 @@ const App = () => (
       <Header />
       <div
         className="container is-fullhd"
-        style={{ minHeight: "calc(100vh - 84px - 195px)" }}
+        style={{minHeight: 'calc(100vh - 84px - 195px)'}}
       >
         <Route exact path="/" component={Pokedex} />
         <Route exact path="/generation/:generation" component={Pokedex} />

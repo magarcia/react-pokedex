@@ -1,13 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
-import PokemonType from "./PokemonType";
-import { capitalize } from "../utils";
+import React from 'react';
+import PropTypes from 'prop-types';
+import PokemonType from './PokemonType';
+import PokedexDataInfo from './PokedexDataInfo';
+import {capitalize} from '../utils';
 
-function toFeet(n) {
-  var realFeet = (n * 0.3937) / 12;
-  var feet = Math.floor(realFeet);
-  var inches = Math.round((realFeet - feet) * 12);
-  return feet + "′" + inches + "´´";
+function toFeet(meters) {
+  const realFeet = (meters * 0.3937) / 12;
+  const feet = Math.floor(realFeet);
+  const inches = Math.round((realFeet - feet) * 12);
+  return feet + '′' + inches + '´´';
 }
 
 const formatHeight = height => {
@@ -19,52 +20,37 @@ const formatWeight = weight => {
   return `${lbs} lbs  (${weight / 10}kg)`;
 };
 
-const entry = (label, value) => (
-  <div className="column is-half">
-    <h1
-      className="subtitle is-5 has-text-weight-light"
-      style={{ marginBottom: "0.5rem" }}
-    >
-      {label}
-    </h1>
-    <h2
-      className="subtitle is-5 has-text-weight-normal"
-      style={{ marginTop: "0.5rem" }}
-    >
-      {value}
-    </h2>
-  </div>
-);
-
-const PokedexData = ({ id, types, height, weight, abilities }) => (
+const PokedexData = ({id, types, height, weight, abilities}) => (
   <div className="columns is-multiline is-mobile">
-    {entry("Height", formatHeight(height))}
-    {entry(
-      "Type",
-      <div className="tags">
-        {types
-          .sort((a, b) => a.slot - b.slot)
-          .map(type => <PokemonType {...type} key={type.slot} />)}
-      </div>
-    )}
-    {entry("Weight", formatWeight(weight))}
-    {entry(
-      "Abilities",
-      abilities
-        .sort((a, b) => a.slot - b.slot)
+    <PokedexDataInfo label="Height" value={formatHeight(height)} />
+    <PokedexDataInfo
+      label="Type"
+      value={
+        <div className="tags">
+          {types
+            .sort((t1, t2) => t1.slot - t2.slot)
+            .map(type => <PokemonType {...type} key={type.slot} />)}
+        </div>
+      }
+    />
+    <PokedexDataInfo label="Weight" value={formatWeight(weight)} />
+    <PokedexDataInfo
+      label="Abilities"
+      value={abilities
+        .sort((a1, a2) => a1.slot - a2.slot)
         .filter(ab => !ab.is_hidden)
-        .map(a => capitalize(a.ability.name))
-        .join(", ")
-    )}
+        .map(ab => capitalize(ab.ability.name))
+        .join(', ')}
+    />
   </div>
 );
 
 PokedexData.propTypes = {
-  order: PropTypes.number.isRequired,
-  types: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   abilities: PropTypes.arrayOf(PropTypes.shape()).isRequired,
   height: PropTypes.number.isRequired,
-  weight: PropTypes.number.isRequired
+  order: PropTypes.number.isRequired,
+  types: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  weight: PropTypes.number.isRequired,
 };
 
 export default PokedexData;

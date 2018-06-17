@@ -1,40 +1,43 @@
-import React, { Fragment } from "react";
+import React, {Fragment} from 'react';
 import {
   API,
   MAX_POKEMONS,
   MAX_POKEMONS_GEN,
   MAX_POKEMONS_GEN_I,
   MAX_POKEMONS_GEN_II,
-  MAX_POKEMONS_GEN_III
-} from "../Constants";
-import withFetching from "../components/withFetching";
-import PokedexEntry from "../components/PokedexEntry";
-import GenerationSelector from "../components/GenerationSelector";
+  MAX_POKEMONS_GEN_III,
+} from '../Constants';
+import GenerationSelector from '../components/GenerationSelector';
+import PokedexEntry from '../components/PokedexEntry';
+import withFetching from '../components/withFetching';
 
 const getValidGeneration = generationString => {
-  if (generationString === "all") return generationString;
+  if (generationString === 'all') {
+    return generationString;
+  }
   const generation = parseInt(generationString, 10);
-  return (Math.min(Math.max(generation, 1), 3) || "all").toString();
+  return (Math.min(Math.max(generation, 1), 3) || 'all').toString();
 };
 
 const generationUrlBuilder = props => {
   const generation = getValidGeneration(props.match.params.generation);
-  let limit, offset;
+  let limit;
+  let offset;
 
   switch (generation) {
-    case "all":
+    case 'all':
       limit = MAX_POKEMONS;
       offset = 0;
       break;
-    case "1":
+    case '1':
       limit = MAX_POKEMONS_GEN_I;
       offset = 0;
       break;
-    case "2":
+    case '2':
       limit = MAX_POKEMONS_GEN_II - MAX_POKEMONS_GEN_I;
       offset = MAX_POKEMONS_GEN_I;
       break;
-    case "3":
+    case '3':
       limit = MAX_POKEMONS_GEN_III - MAX_POKEMONS_GEN_II;
       offset = MAX_POKEMONS_GEN_II;
       break;
@@ -47,7 +50,7 @@ const generationUrlBuilder = props => {
   return `${API}?limit=${limit}&offset=${offset}`;
 };
 
-const Pokedex = ({ results, match }) => {
+const Pokedex = ({results, match}) => {
   const generation = getValidGeneration(match.params.generation);
   const prevGeneration = generation - 1 || 0;
   return (

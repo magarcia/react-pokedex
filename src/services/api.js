@@ -9,9 +9,8 @@ const api = url => {
       const json = response.json();
       json.then(data => localStorage.setItem(url, JSON.stringify(data)));
       return json;
-    } else {
-      throw new Error("Something went wrong ...");
     }
+    throw new Error('Something went wrong ...');
   });
 };
 

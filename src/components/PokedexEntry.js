@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { padNumber } from "../utils";
-import PokemonImage from "./PokemonImage";
+import React from 'react';
+import {Link} from 'react-router-dom';
+import {padNumber} from '../utils';
+import PokemonImage from './PokemonImage';
 
-const PokedexEntry = ({ name, id }) => (
+const PokedexEntry = ({name, id}) => (
   <div className="pokedex-entry column is-3">
     <div className="pokemoncard has-text-centered">
       <Link to={`/pokemon/${padNumber(id, 3)}`}>

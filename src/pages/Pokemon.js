@@ -1,10 +1,10 @@
-import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-import PokedexData from "../components/PokedexData";
-import PokemonImage from "../components/PokemonImage";
-import withFetching from "../components/withFetching";
-import { API } from "../Constants";
-import { padNumber } from "../utils";
+import React, {Fragment} from 'react';
+import {Link} from 'react-router-dom';
+import PokedexData from '../components/PokedexData';
+import PokemonImage from '../components/PokemonImage';
+import withFetching from '../components/withFetching';
+import {API} from '../Constants';
+import {padNumber} from '../utils';
 
 const Pokemon = props => (
   <Fragment>
@@ -24,20 +24,15 @@ const Pokemon = props => (
     </div>
     <div className="columns">
       <div className="column">
-        <PokemonImage
-          id={props.id}
-          name={props.name}
-          size={250}
-          animate={true}
-        />
+        <PokemonImage id={props.id} name={props.name} size={250} animate />
       </div>
       <div className="column is-three-quarters pokemon-info">
-        <div className="content" style={{ margin: "0 16px" }}>
+        <div className="content" style={{margin: '0 16px'}}>
           <h1
             className="subtitle is-1 is-capitalized"
             style={{
-              display: "inline-block",
-              marginRight: 16
+              display: 'inline-block',
+              marginRight: 16,
             }}
           >
             {props.name}
@@ -45,7 +40,7 @@ const Pokemon = props => (
 
           <h2
             className="subtitle is-2 has-text-weight-light"
-            style={{ display: "inline-block" }}
+            style={{display: 'inline-block'}}
           >
             #{padNumber(props.id)}
           </h2>
@@ -57,5 +52,5 @@ const Pokemon = props => (
 );
 
 export default withFetching(props => API + parseInt(props.match.params.id, 10))(
-  Pokemon
+  Pokemon,
 );
