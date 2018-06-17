@@ -17,7 +17,11 @@ const Header = () => (
       </h1>
     </Link>
 
-    <div className="level-right" />
+    <div className="level-right">
+      <Link to="/about" className="level-left has-text-white">
+        About
+      </Link>
+    </div>
   </nav>
 );
 

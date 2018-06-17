@@ -1,4 +1,4 @@
-const padNumer = (num, size = 3) => {
+const padNumber = (num, size = 3) => {
   let s = num.toString();
   while (s.length < size) s = "0" + s;
   return s;
@@ -34,4 +34,4 @@ const deepEqual = (a, b) => {
   }
 };
 
-export { padNumer, capitalize, deepEqual };
+export { padNumber, capitalize, deepEqual };

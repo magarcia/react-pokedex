@@ -33,6 +33,15 @@ body {
   color: #ce403a;
 }
 
+.pokedex-entry {
+  animation: zoomIn 200ms;
+}
+
+.pokemon-image.animate,
+.pokemon-info {
+  animation: fadeInUp 400ms;
+}
+
 .egg-loader {
   animation: rubberBand 2200ms infinite;
   margin: 100px auto;
@@ -42,4 +51,14 @@ body {
   transform: translateZ(0);
   left: 50%;
   top: 30vh;
+}
+
+.footer {
+  margin-top: 100px;
+  padding-bottom: 3rem;
+}
+.footer .love {
+  color: #ce403a;
+  display: inline-flex;
+  vertical-align: middle;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { padNumer } from "../utils";
+import { padNumber } from "../utils";
 
 const fixNames = name => {
   if (name === "sceptile") {
@@ -23,11 +23,14 @@ const fixNames = name => {
   return name;
 };
 
-const PokemonImage = ({ id, name, size = 100 }) => (
-  <figure style={{ padding: 50 }} className="image is-4by3">
+const PokemonImage = ({ id, name, size = 100, animate = false }) => (
+  <figure
+    style={{ padding: 50 }}
+    className={`pokemon-image image is-4by3 ${animate ? "animate" : ""}`}
+  >
     <svg style={{ height: size, width: size }}>
       <use
-        xlinkHref={`/pokemon-symbols.svg#${padNumer(id, 3)}-${fixNames(name)}`}
+        xlinkHref={`/pokemon-symbols.svg#${padNumber(id, 3)}-${fixNames(name)}`}
       />
     </svg>
   </figure>

@@ -17,26 +17,7 @@ const getValidGeneration = generationString => {
   return (Math.min(Math.max(generation, 1), 3) || "all").toString();
 };
 
-const Pokedex = ({ results, match }) => {
-  const generation = getValidGeneration(match.params.generation);
-  const prevGeneration = generation - 1 || 0;
-  return (
-    <Fragment>
-      <GenerationSelector currentGeneration={generation} />
-      <div className="columns is-multiline">
-        {results.map((entry, index) => (
-          <PokedexEntry
-            name={entry.name}
-            id={index + 1 + MAX_POKEMONS_GEN[prevGeneration]}
-            key={index}
-          />
-        ))}
-      </div>
-    </Fragment>
-  );
-};
-
-export default withFetching(props => {
+const generationUrlBuilder = props => {
   const generation = getValidGeneration(props.match.params.generation);
   let limit, offset;
 
@@ -64,4 +45,25 @@ export default withFetching(props => {
   }
 
   return `${API}?limit=${limit}&offset=${offset}`;
-})(Pokedex);
+};
+
+const Pokedex = ({ results, match }) => {
+  const generation = getValidGeneration(match.params.generation);
+  const prevGeneration = generation - 1 || 0;
+  return (
+    <Fragment>
+      <GenerationSelector currentGeneration={generation} />
+      <div className="columns is-multiline">
+        {results.map((entry, index) => (
+          <PokedexEntry
+            name={entry.name}
+            id={index + 1 + MAX_POKEMONS_GEN[prevGeneration]}
+            key={index}
+          />
+        ))}
+      </div>
+    </Fragment>
+  );
+};
+
+export default withFetching(generationUrlBuilder)(Pokedex);
