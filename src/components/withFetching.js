@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import api from "../services/api";
 
 const withFetching = getUrl => InnerComponent =>
   class WithFetching extends Component {
@@ -16,14 +17,7 @@ const withFetching = getUrl => InnerComponent =>
     componentDidMount() {
       this.setState({ isLoading: true });
 
-      fetch(getUrl(this.props))
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            throw new Error("Something went wrong ...");
-          }
-        })
+      api(getUrl(this.props))
         .then(data => this.setState({ data, isLoading: false }))
         .catch(error => this.setState({ error, isLoading: false }));
     }
