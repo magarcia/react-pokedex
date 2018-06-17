@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PokedexData from "./PokedexData";
 
 class Pokemon extends Component {
   constructor(props) {
@@ -43,25 +44,7 @@ class Pokemon extends Component {
             <h1 style={{ textTransform: "capitalize" }}>{this.state.name}</h1>
 
             <h2>Pokédex data</h2>
-            <table className="table is-hoverable">
-              <tr>
-                <td>National №</td>
-                <td>{this.state.order}</td>
-              </tr>
-              <tr>
-                <td>Type</td>
-                <td>{JSON.stringify(this.state.types)}</td>
-              </tr>
-              <tr>
-                <td>Height</td>
-                <td>{this.state.height}</td> {/*2′4″ (0.71m)*/}
-              </tr>
-              <tr>
-                <td>Weight</td>
-                <td>{this.state.weight}</td>
-                {/*15.2 lbs (6.9 kg)*/}
-              </tr>
-            </table>
+            <PokedexData {...this.state} />
           </div>
         </div>
       </div>
