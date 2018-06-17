@@ -1,6 +1,6 @@
 import React from "react";
-import PokedexData from "./PokedexData";
-import withFetching from "./withFetching";
+import PokedexData from "../components/PokedexData";
+import withFetching from "../components/withFetching";
 import { API } from "../Constants";
 
 const Pokemon = props => (
@@ -21,4 +21,4 @@ const Pokemon = props => (
   </div>
 );
 
-export default withFetching(props => API + props.id)(Pokemon);
+export default withFetching(props => API + props.match.params.id)(Pokemon);

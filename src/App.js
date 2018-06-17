@@ -1,10 +1,15 @@
-import React, { Component } from "react";
-import Pokemon from "./components/Pokemon";
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Pokedex from "./pages/Pokedex";
+import Pokemon from "./pages/Pokemon";
 
-class App extends Component {
-  render() {
-    return <Pokemon id={1} />;
-  }
-}
+const App = () => (
+  <Router>
+    <div className="container is-fluid">
+      <Route exact path="/" component={Pokedex} />
+      <Route path="/:id" component={Pokemon} />
+    </div>
+  </Router>
+);
 
 export default App;

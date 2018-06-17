@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PokemonType from "./PokemonType";
+import { padNumer } from "../utils";
 
 function toFeet(n) {
   var realFeet = (n * 0.3937) / 12;
@@ -18,12 +19,12 @@ const formatWeight = weight => {
   return `${lbs} lbs  (${weight / 10}kg)`;
 };
 
-const PokedexData = ({ order, types, height, weight }) => (
+const PokedexData = ({ id, types, height, weight }) => (
   <table className="table is-hoverable">
     <tbody>
       <tr>
         <td>National №</td>
-        <td>{order}</td>
+        <td>{padNumer(id)}</td>
       </tr>
       <tr>
         <td>Type</td>
