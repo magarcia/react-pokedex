@@ -3,7 +3,7 @@ import Pokemon from "./components/Pokemon";
 
 class App extends Component {
   render() {
-    return <Pokemon />;
+    return <Pokemon id={1} />;
   }
 }
 
