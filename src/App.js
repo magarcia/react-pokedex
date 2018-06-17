@@ -7,7 +7,7 @@ import Pokedex from './pages/Pokedex';
 import Pokemon from './pages/Pokemon';
 
 const App = () => (
-  <Router>
+  <Router basename="/react-pokedex">
     <Fragment>
       <Header />
       <div

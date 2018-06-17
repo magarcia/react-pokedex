@@ -25,7 +25,7 @@ exports[`<About /> renders correctly 1`] = `
         }
       >
         <use
-          xlinkHref="/icons.svg#backpack"
+          xlinkHref="icons.svg#backpack"
         />
       </svg>
     </figure>

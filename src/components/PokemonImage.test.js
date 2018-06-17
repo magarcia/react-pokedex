@@ -25,49 +25,49 @@ describe('<PokemonImage />', () => {
   it('should set the correct svg link', () => {
     const wrapper = shallowComponent();
     expect(wrapper.find('use').prop('xlinkHref')).toEqual(
-      '/pokemon-symbols.svg#001-bulbasaur',
+      'pokemon-symbols.svg#001-bulbasaur',
     );
   });
 
   it('should set fix the sceptile name', () => {
     const wrapper = shallowComponent({name: 'sceptile'});
     expect(wrapper.find('use').prop('xlinkHref')).toEqual(
-      '/pokemon-symbols.svg#001-sceptille',
+      'pokemon-symbols.svg#001-sceptille',
     );
   });
 
   it('should set fix the jirachi name', () => {
     const wrapper = shallowComponent({name: 'jirachi'});
     expect(wrapper.find('use').prop('xlinkHref')).toEqual(
-      '/pokemon-symbols.svg#001-lirachi',
+      'pokemon-symbols.svg#001-lirachi',
     );
   });
 
   it('should set fix the ninjask name', () => {
     const wrapper = shallowComponent({name: 'ninjask'});
     expect(wrapper.find('use').prop('xlinkHref')).toEqual(
-      '/pokemon-symbols.svg#001-niniask',
+      'pokemon-symbols.svg#001-niniask',
     );
   });
 
   it('should set fix the baltoy name', () => {
     const wrapper = shallowComponent({name: 'baltoy'});
     expect(wrapper.find('use').prop('xlinkHref')).toEqual(
-      '/pokemon-symbols.svg#001-baltov',
+      'pokemon-symbols.svg#001-baltov',
     );
   });
 
   it('should set fix the claydol name', () => {
     const wrapper = shallowComponent({name: 'claydol'});
     expect(wrapper.find('use').prop('xlinkHref')).toEqual(
-      '/pokemon-symbols.svg#001-clavdol',
+      'pokemon-symbols.svg#001-clavdol',
     );
   });
 
   it('should set fix the deoxys name', () => {
     const wrapper = shallowComponent({name: 'deoxys-normal'});
     expect(wrapper.find('use').prop('xlinkHref')).toEqual(
-      '/pokemon-symbols.svg#001-deoxys',
+      'pokemon-symbols.svg#001-deoxys',
     );
   });
 });

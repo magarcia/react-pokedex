@@ -30,7 +30,7 @@ const PokemonImage = ({id, name, size = 100, animate = false}) => (
   >
     <svg style={{height: size, width: size}}>
       <use
-        xlinkHref={`/pokemon-symbols.svg#${padNumber(id, 3)}-${fixNames(name)}`}
+        xlinkHref={`pokemon-symbols.svg#${padNumber(id, 3)}-${fixNames(name)}`}
       />
     </svg>
   </figure>

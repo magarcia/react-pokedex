@@ -2,7 +2,7 @@
   "name": "react-workshop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://magarcia.github.io/react-pokedex",
+  "homepage": "http://thingsofgeek.com/react-pokedex/",
   "dependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",

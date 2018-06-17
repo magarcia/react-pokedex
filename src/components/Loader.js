@@ -16,7 +16,7 @@ export default ({size = 150}) => (
         width: size,
       }}
     >
-      <use xlinkHref={'/icons.svg#egg'} />
+      <use xlinkHref={'icons.svg#egg'} />
     </svg>
   </figure>
 );

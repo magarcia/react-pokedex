@@ -18,7 +18,7 @@ exports[`<PokemonImage /> renders correctly 1`] = `
     }
   >
     <use
-      xlinkHref="/pokemon-symbols.svg#001-bulbasaur"
+      xlinkHref="pokemon-symbols.svg#001-bulbasaur"
     />
   </svg>
 </figure>

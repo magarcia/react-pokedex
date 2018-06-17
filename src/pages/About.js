@@ -6,7 +6,7 @@ const About = () => (
     <div className="column">
       <figure style={{display: 'inline-block', height: size, width: size}}>
         <svg style={{height: size, width: size}}>
-          <use xlinkHref={'/icons.svg#backpack'} />
+          <use xlinkHref={'icons.svg#backpack'} />
         </svg>
       </figure>
     </div>
