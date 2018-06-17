@@ -1,5 +1,6 @@
 import React from 'react';
 import {padNumber} from '../utils';
+import pokemonSymbols from '../pokemon-symbols.svg';
 
 const fixNames = name => {
   if (name === 'sceptile') {
@@ -30,7 +31,7 @@ const PokemonImage = ({id, name, size = 100, animate = false}) => (
   >
     <svg style={{height: size, width: size}}>
       <use
-        xlinkHref={`pokemon-symbols.svg#${padNumber(id, 3)}-${fixNames(name)}`}
+        xlinkHref={`${pokemonSymbols}#${padNumber(id, 3)}-${fixNames(name)}`}
       />
     </svg>
   </figure>

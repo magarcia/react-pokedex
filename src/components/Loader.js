@@ -1,4 +1,5 @@
 import React from 'react';
+import icons from '../icons.svg';
 
 export default ({size = 150}) => (
   <figure
@@ -16,7 +17,7 @@ export default ({size = 150}) => (
         width: size,
       }}
     >
-      <use xlinkHref={'icons.svg#egg'} />
+      <use xlinkHref={`${icons}#egg`} />
     </svg>
   </figure>
 );

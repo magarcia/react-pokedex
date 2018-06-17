@@ -1,4 +1,5 @@
 import React from 'react';
+import icons from '../icons.svg';
 
 const size = 200;
 const About = () => (
@@ -6,7 +7,7 @@ const About = () => (
     <div className="column">
       <figure style={{display: 'inline-block', height: size, width: size}}>
         <svg style={{height: size, width: size}}>
-          <use xlinkHref={'icons.svg#backpack'} />
+          <use xlinkHref={`${icons}#backpack`} />
         </svg>
       </figure>
     </div>
