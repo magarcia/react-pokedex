@@ -5,7 +5,7 @@ import PokemonImage from "./PokemonImage";
 
 const PokedexEntry = ({ name, id }) => (
   <div className="pokedex-entry column is-3">
-    <div className="pokemoncard" style={{ textAlign: "center" }}>
+    <div className="pokemoncard has-text-centered">
       <Link to={`/pokemon/${padNumber(id, 3)}`}>
         <div className="pokemoncard-image has-background-light">
           {/* <i className="material-icons fav">favorite_border</i> */}

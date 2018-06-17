@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PokedexEntry /> renders correctly 1`] = `
+<div
+  className="pokedex-entry column is-3"
+>
+  <div
+    className="pokemoncard has-text-centered"
+  >
+    <Link
+      replace={false}
+      to="/pokemon/001"
+    >
+      <div
+        className="pokemoncard-image has-background-light"
+      >
+        <PokemonImage
+          id={1}
+          name="bulbasaur"
+        />
+      </div>
+      <div
+        className="pokemoncard-content"
+      >
+        <h1
+          className="title is-4 is-capitalized"
+        >
+          bulbasaur
+        </h1>
+        <p
+          className="subtitle is-6"
+        >
+          #
+          001
+        </p>
+      </div>
+    </Link>
+  </div>
+</div>
+`;

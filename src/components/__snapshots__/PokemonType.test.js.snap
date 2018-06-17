@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PokemonType /> renders correctly 1`] = `
+<span
+  className="tag is-medium is-capitalized has-text-white"
+  style={
+    Object {
+      "backgroundColor": "#a33ea1",
+    }
+  }
+>
+  poison
+</span>
+`;
