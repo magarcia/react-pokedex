@@ -1,6 +1,6 @@
 import React from 'react';
 import {padNumber} from '../utils';
-import pokemonSymbols from '../pokemon-symbols.svg';
+import {BASENAME} from '../Constants';
 
 const fixNames = name => {
   if (name === 'sceptile') {
@@ -21,20 +21,47 @@ const fixNames = name => {
   if (name.includes('deoxys')) {
     return 'deoxys';
   }
+  if (name === 'unown') {
+    return `${name}-a`;
+  }
+  if (name === 'spinda') {
+    return `${name}-1`;
+  }
+  if (name === 'castform') {
+    return `${name}-normal`;
+  }
+  if (name === 'burmy') {
+    return `${name}-plant`;
+  }
+  if (name === 'vespiquen') {
+    return 'vespiqueen';
+  }
+  if (name === 'cherrim') {
+    return 'cherim-overcast';
+  }
+  if (name === 'shellos') {
+    return 'shellos-east';
+  }
+  if (name === 'gastrodon') {
+    return 'gastrodon-east';
+  }
+  if (name === 'mime-jr') {
+    return 'mimejr';
+  }
+  if (name === 'lickilicky') {
+    return 'lickilicki';
+  }
   return name;
 };
 
 const PokemonImage = ({id, name, size = 100, animate = false}) => (
-  <figure
-    style={{padding: 50}}
-    className={`pokemon-image image is-4by3 ${animate ? 'animate' : ''}`}
-  >
-    <svg style={{height: size, width: size}}>
-      <use
-        xlinkHref={`${pokemonSymbols}#${padNumber(id, 3)}-${fixNames(name)}`}
-      />
-    </svg>
-  </figure>
+  <div style={{padding: 20}}>
+    <img
+      src={`${BASENAME}/pokemons/${padNumber(id, 3)}-${fixNames(name)}.svg`}
+      style={{height: size, width: size}}
+      alt={name}
+    />
+  </div>
 );
 
 export default PokemonImage;

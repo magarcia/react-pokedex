@@ -5,9 +5,10 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Pokedex from './pages/Pokedex';
 import Pokemon from './pages/Pokemon';
+import {BASENAME} from './Constants';
 
 const App = () => (
-  <Router basename="/react-pokedex">
+  <Router basename={BASENAME}>
     <Fragment>
       <Header />
       <div

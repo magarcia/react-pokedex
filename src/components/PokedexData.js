@@ -29,7 +29,9 @@ const PokedexData = ({id, types, height, weight, abilities}) => (
         <div className="tags">
           {types
             .sort((t1, t2) => t1.slot - t2.slot)
-            .map(type => <PokemonType {...type} key={type.slot} />)}
+            .map(type => (
+              <PokemonType {...type} key={type.slot} />
+            ))}
         </div>
       }
     />

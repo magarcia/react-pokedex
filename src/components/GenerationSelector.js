@@ -18,6 +18,9 @@ const GenerationSelector = ({currentGeneration}) => {
         <li className={isActive('3')}>
           <Link to={'/generation/3'}>Third generation</Link>
         </li>
+        <li className={isActive('4')}>
+          <Link to={'/generation/4'}>Fourth generation</Link>
+        </li>
       </ul>
     </div>
   );
