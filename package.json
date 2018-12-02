@@ -4,13 +4,11 @@
   "private": true,
   "homepage": "http://thingsofgeek.com/react-pokedex/",
   "dependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
     "query-string": "^6.1.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "2.1.1"
   },
   "scripts": {
     "build": "react-scripts build",
@@ -24,18 +22,19 @@
     "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "eslint": "4.19.1",
-    "eslint-config-babel": "^7.0.2",
-    "eslint-config-prettier": "2.9.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint-config-babel": "^8.0.2",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-config-react": "^1.1.7",
-    "eslint-plugin-flowtype": "^2.49.3",
-    "eslint-plugin-import": "2.12.0",
-    "eslint-plugin-prettier": "2.6.0",
-    "eslint-plugin-react": "7.9.1",
-    "gh-pages": "^1.2.0",
-    "husky": "0.14.3",
-    "lint-staged": "7.2.0",
-    "prettier": "1.13.5"
+    "eslint-plugin-flowtype": "^3.2.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.0.1",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3"
   },
   "lint-staged": {
     "*.{js,jsx}": [
@@ -46,5 +45,11 @@
       "prettier --write",
       "git add"
     ]
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
