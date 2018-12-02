@@ -2,7 +2,7 @@
   "name": "react-workshop",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://thingsofgeek.com/react-pokedex/",
+  "homepage": "https://magarcia.github.io/react-pokedex/",
   "dependencies": {
     "query-string": "^6.1.0",
     "react": "^16.6.0",
