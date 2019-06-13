@@ -9,8 +9,8 @@
 ```sh
 git clone git@github.com:magarcia/react-pokedex.git
 cd react-pokedex
-yarn install
-yarn start # open localhost:3000
+npm install
+npm start # open localhost:3000
 ```
 
 ## Screenshots
