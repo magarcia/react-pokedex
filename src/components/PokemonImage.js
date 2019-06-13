@@ -51,6 +51,9 @@ const fixNames = name => {
   if (name === 'lickilicky') {
     return 'lickilicki';
   }
+  if (name === 'ho-oh') {
+    return 'hooh';
+  }
   return name;
 };
 

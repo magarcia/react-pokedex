@@ -67,7 +67,7 @@ const Pokedex = ({results, match}) => {
     <Fragment>
       <GenerationSelector currentGeneration={generation} />
       <div className="columns is-multiline">
-        {results.slice(offset, offset + limit).map((entry, index) => (
+        {results.slice(0, offset + limit).map((entry, index) => (
           <PokedexEntry
             name={entry.name}
             id={index + 1 + MAX_POKEMONS_GEN[prevGeneration]}
