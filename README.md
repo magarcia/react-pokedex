@@ -16,3 +16,7 @@ yarn start # open localhost:3000
 ![Pokemon List](screenshots/pokemon-list.png)
 
 ![Pokemon View](screenshots/pikachu.png)
+
+## Credits
+
+Pokémon icons: [The Artificial](https://theartificial.com/pokemonicons/)
