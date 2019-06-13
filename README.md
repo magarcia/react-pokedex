@@ -1,6 +1,6 @@
-# React Pokedex
+# React Pokédex
 
-**React Pokedex** is a project made with learning purposes.
+**React Pokédex** is a project made with learning purposes.
 
 [Demo](https://pokedex.magarcia.now.sh)
 
