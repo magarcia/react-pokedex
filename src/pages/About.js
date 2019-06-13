@@ -16,6 +16,16 @@ const About = () => (
       <p>
         <strong>React Pokedex</strong> is a project made with learning purposes.
       </p>
+      <h1>Pokémon Icons</h1>
+      <p>
+        <a
+          href="https://theartificial.com/pokemonicons/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          The Artificial
+        </a>
+      </p>
       <div className="license">
         <h1 className="subtitle is-2">MIT License</h1>
 
