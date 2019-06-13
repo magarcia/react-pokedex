@@ -20,7 +20,7 @@ deploy:
       all_branches: true
       master: false
   - provider: script
-    script: now --token $NOW_TOKEN && now alias --token $NOW_TOKEN
+    script: now --token $NOW_TOKEN --target production
     skip_cleanup: true
     on:
       master: true
