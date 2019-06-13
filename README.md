@@ -2,6 +2,8 @@
 
 **React Pokedex** is a project made with learning purposes.
 
+[Demo](https://pokedex.magarcia.now.sh)
+
 ## Getting started
 
 ```sh

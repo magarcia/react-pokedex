@@ -5,7 +5,7 @@ const MAX_POKEMONS_GEN_II = 251;
 const MAX_POKEMONS_GEN_III = 386;
 const MAX_POKEMONS_GEN_IV = 493;
 const MAX_POKEMONS = MAX_POKEMONS_GEN_IV;
-const BASENAME = process.env.NODE_ENV === 'production' ? '/react-pokedex' : '';
+const BASENAME = '';
 export {
   BASENAME,
   API,
