@@ -24,7 +24,7 @@
     "now-dev": "npm run start"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0",
+    "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-babel": "^8.0.2",
     "eslint-config-prettier": "^3.3.0",
