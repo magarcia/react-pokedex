@@ -4,11 +4,11 @@
   "private": true,
   "homepage": "https://pokedex.magarcia.now.sh",
   "dependencies": {
-    "query-string": "^6.8.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.6.0",
+    "query-string": "^6.8.3",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "^3.0.1"
+    "react-scripts": "^3.1.1"
   },
   "scripts": {
     "prebuild": "npm run test -- --watchAll=false",
@@ -27,14 +27,14 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-babel": "^9.0.0",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-flowtype": "^3.10.3",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.4",
-    "lint-staged": "^9.2.1",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.15.3"
   },
   "lint-staged": {
