@@ -5,7 +5,7 @@
   "homepage": "https://pokedex.magarcia.now.sh",
   "dependencies": {
     "query-string": "^6.8.3",
-    "react": "^16.9.0",
+    "react": "^16.11.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "^3.1.1"
