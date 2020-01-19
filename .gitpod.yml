@@ -3,5 +3,9 @@ tasks:
     command: npm run start
 # Ports to expose on workspace startup (optional)
 ports:
-  - port: 8000
+  - port: 3000
     onOpen: open-preview
+
+vscode:
+  extensions:
+    - vscodevim.vim@1.12.4:nIIc71K1blhNiazHIBCo+Q==
